@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fragment_raporty_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:orientation="vertical">
+
+    <!-- Główny kontener w ScrollView -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Numer Raportu -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Numer Raportu:"
+            android:textStyle="bold"
+            android:layout_marginTop="4dp"/>
+        <EditText
+            android:id="@+id/editTextNumerRaportu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Automatyczny"
+            android:enabled="false"
+            android:layout_marginBottom="8dp"/>
+
+        <!-- Data z ikonką kalendarza -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Data:"
+            android:textStyle="bold"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp">
+
+            <EditText
+                android:id="@+id/editTextDataRaportu"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="yyyy-MM-dd"
+                android:enabled="false"/>
+
+            <ImageView
+                android:id="@+id/btnWybierzDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@android:drawable/ic_menu_my_calendar"
+                android:contentDescription="Wybierz datę"
+                android:layout_marginLeft="8dp"/>
+        </LinearLayout>
+
+        <!-- Zakres Prac -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Zakres prac:"
+            android:textStyle="bold"/>
+        <EditText
+            android:id="@+id/editTextZakresPrac"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Opis czynności"
+            android:minLines="3"
+            android:inputType="textMultiLine"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Przycisk: WYBIERZ WZ -->
+        <Button
+            android:id="@+id/btnWybierzWZ"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Wybierz WZ"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Tabela Towarów + spis numerów WZ -->
+        <TableLayout
+            android:id="@+id/tableTowaryRaport"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:divider="@android:color/darker_gray"
+            android:showDividers="middle|beginning|end"
+            android:stretchColumns="0"/>
+
+        <!-- Dół: 3 przyciski ZAPISZ, GENERUJ PDF, WYŚLIJ EMAIL -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            android:layout_marginBottom="8dp">
+
+            <!-- Przycisk ZAPISZ RAPORT -->
+            <Button
+                android:id="@+id/btnZapiszRaport"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="ZAPISZ"/>
+
+            <!-- Przycisk GENERUJ PDF -->
+            <Button
+                android:id="@+id/btnGenerujPDF"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="GENERUJ PDF"/>
+
+            <!-- Przycisk WYŚLIJ MAIL -->
+            <Button
+                android:id="@+id/btnEmailRaport"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="WYŚLIJ EMAIL"/>
+        </LinearLayout>
+
+        <!-- NOWY PRZYCISK: Pokaż Raporty (otwiera dialog) -->
+        <Button
+            android:id="@+id/btnPokazRaporty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pokaż Raporty" />
+
+    </LinearLayout>
+</ScrollView>

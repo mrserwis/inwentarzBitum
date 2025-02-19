@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dialog_add_odbiorca_root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nazwa odbiorcy:"
+        android:layout_marginBottom="4dp"/>
+
+    <EditText
+        android:id="@+id/editTextNazwaOdbiorcy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nazwa"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Adres:"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="4dp"/>
+
+    <EditText
+        android:id="@+id/editTextAdresOdbiorcy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Adres"/>
+
+    <!-- Przycisk Zapisz -->
+    <Button
+        android:id="@+id/buttonZapiszOdbiorce"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Zapisz"
+        android:layout_marginTop="16dp"/>
+
+    <!-- Przycisk Anuluj (opcjonalnie) -->
+    <Button
+        android:id="@+id/buttonAnulujOdbiorce"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Anuluj"
+        android:layout_marginTop="8dp"/>
+</LinearLayout>

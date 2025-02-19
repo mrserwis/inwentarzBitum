@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/towaryRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="?android:colorBackground">
+
+    <!-- Tytuł u góry -->
+    <TextView
+        android:id="@+id/towaryTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Towary"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:paddingBottom="12dp"/>
+
+    <!-- Wiersz z 3 przyciskami -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:paddingBottom="12dp">
+
+        <Button
+            android:id="@+id/btn_dodaj_towar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Dodaj Towar"/>
+
+        <Button
+            android:id="@+id/btn_usun_towar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Usuń Towar"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"/>
+
+        <!-- Ten przycisk będzie widoczny tylko w trybie WZ (ustawiany w kodzie) -->
+        <Button
+            android:id="@+id/btn_zatwierdz_wybor_towarow"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Zatwierdź wybór"
+            android:visibility="gone"/>
+    </LinearLayout>
+
+    <!-- Sekcja na tabelę towarów, w ScrollView by można przewijać listę -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="always">
+
+        <TableLayout
+            android:id="@+id/table_layout_towary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="0"
+            android:divider="@android:color/darker_gray"
+            android:showDividers="middle|beginning|end"/>
+    </ScrollView>
+
+</LinearLayout>

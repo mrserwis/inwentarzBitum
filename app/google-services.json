@@ -1,0 +1,67 @@
+{
+  "project_info": {
+    "project_number": "339259395160",
+    "project_id": "inwentarzbitum",
+    "storage_bucket": "inwentarzbitum.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:339259395160:android:9b18934b78e21dd4948e2d",
+        "android_client_info": {
+          "package_name": "com.bitum.inwentarz"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAoMVNFaFU_AKqvKc6d6fMQnJpVwXi8nNY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:339259395160:android:6196fe201863722e948e2d",
+        "android_client_info": {
+          "package_name": "com.bitum.inwentarzbitum"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAoMVNFaFU_AKqvKc6d6fMQnJpVwXi8nNY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:339259395160:android:465af7b301e47fc5948e2d",
+        "android_client_info": {
+          "package_name": "com.example.inwentarz"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAoMVNFaFU_AKqvKc6d6fMQnJpVwXi8nNY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,61 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'com.google.gms.google-services' // Google Services Plugin
+}
+
+android {
+    namespace 'com.example.inwentarz'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId "com.example.inwentarz"
+        minSdk 24
+        targetSdk 35
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    viewBinding {
+        enabled = true}
+}
+
+dependencies {
+    // AndroidX libraries
+    implementation 'androidx.core:core-ktx:1.15.0'
+    implementation 'androidx.fragment:fragment-ktx:1.8.5' // Dodaj tę zależność, jeśli jej nie ma
+
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+
+    implementation 'androidx.viewpager2:viewpager2:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.2.0'
+    // Firebase Authentication and Realtime Database
+    implementation 'com.google.firebase:firebase-auth:23.1.0'  // Poprawiona wersja Firebase Auth
+    implementation 'com.google.firebase:firebase-database:21.0.0'  // Poprawiona wersja Firebase Database
+    implementation 'com.google.firebase:firebase-core:21.1.1'
+    implementation 'androidx.activity:activity-ktx:1.9.3'
+    implementation 'androidx.activity:activity:1.9.3'
+    implementation "com.google.android.material:material:1.8.0"
+
+    // Testing libraries
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.2.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'
+}

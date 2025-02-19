@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainWZ"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="4dp"
+    tools:context=".WZFragment">
+
+    <!-- GÓRNY RZĄD: 3 przyciski (DODAJ, PODGLĄD, ZATWIERDŹ) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:layout_marginBottom="1dp">
+
+        <Button
+            android:id="@+id/btn_dodaj"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Dodaj"
+            android:textSize="12sp"
+            android:layout_marginEnd="1dp"/>
+
+        <Button
+            android:id="@+id/btn_usun_wz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Usuń WZ"
+            android:layout_marginStart="8dp"
+            android:textSize="12sp"
+            android:layout_marginEnd="1dp"/>
+
+        <Button
+            android:id="@+id/btn_podglad"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Podgląd"
+            android:textSize="12sp"
+            android:layout_marginEnd="1dp"/>
+
+        <Button
+            android:id="@+id/btnZatwierdzWyborWZ"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Zatwierdź"
+            android:textSize="12sp"
+            android:visibility="gone"/>
+    </LinearLayout>
+
+    <!-- Przycisk do rozwijania / zwijania filtrów -->
+    <Button
+        android:id="@+id/btnToggleFiltry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ukryj filtry"
+        android:textSize="12sp"
+        android:layout_marginBottom="1dp"
+        android:layout_gravity="end" />
+
+    <!-- SEKCJA FILTRÓW -->
+    <LinearLayout
+        android:id="@+id/filtersContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="1dp">
+
+        <!-- Tytuł "Filtry" -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Filtry"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="1dp"/>
+
+        <!-- Dwie kolumny (Data od/do i Pracownik, Dostawa) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_marginBottom="1dp">
+
+            <!-- LEWA KOLUMNA: Data od/do -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginEnd="1dp">
+
+                <!-- Filtr: Data od -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Data od"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="1dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="2dp">
+
+                    <CheckBox
+                        android:id="@+id/checkBoxDataOd"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <EditText
+                        android:id="@+id/editTextDataOd"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="yyyy-MM-dd"
+                        android:inputType="text"
+                        android:focusable="false"
+                        android:textSize="12sp"/>
+
+                    <!-- Przycisk kalendarza data od -->
+                    <ImageButton
+                        android:id="@+id/btnDataOd"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@android:drawable/ic_menu_my_calendar"
+                        android:contentDescription="Wybierz datę od"
+                        android:layout_marginStart="1dp" />
+                </LinearLayout>
+
+                <!-- Filtr: Data do -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Data do"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="1dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/checkBoxDataDo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <EditText
+                        android:id="@+id/editTextDataDo"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="yyyy-MM-dd"
+                        android:inputType="text"
+                        android:focusable="false"
+                        android:textSize="12sp"/>
+
+                    <!-- Przycisk kalendarza data do -->
+                    <ImageButton
+                        android:id="@+id/btnDataDo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@android:drawable/ic_menu_my_calendar"
+                        android:contentDescription="Wybierz datę do"
+                        android:layout_marginStart="1dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- PRAWA KOLUMNA: Pracownik, Dostawa od/do -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <!-- Pracownik -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pracownik"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="1dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="2dp">
+
+                    <CheckBox
+                        android:id="@+id/checkBoxPracownikFilter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <Spinner
+                        android:id="@+id/spinner_pracownik"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"/>
+                </LinearLayout>
+
+                <!-- Dostawa od -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dostawa od"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="1dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="2dp">
+
+                    <CheckBox
+                        android:id="@+id/checkBoxDostawaOd"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <Spinner
+                        android:id="@+id/spinner_odbiorca1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"/>
+                </LinearLayout>
+
+                <!-- Dostawa do -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dostawa do"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="1dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/checkBoxDostawaDo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <Spinner
+                        android:id="@+id/spinner_dostawa1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Przycisk FILTRUJ -->
+        <Button
+            android:id="@+id/buttonFiltruj"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="FILTRUJ"
+            android:textSize="12sp"
+            android:layout_gravity="center" />
+    </LinearLayout>
+
+    <!-- DOLNA CZĘŚĆ: Tabela w poziomym i pionowym scrollu -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:scrollbars="horizontal"
+        android:layout_marginTop="1dp">
+
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical">
+
+            <TableLayout
+                android:id="@+id/table_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:stretchColumns="1"
+                android:divider="@android:color/darker_gray"
+                android:showDividers="middle|beginning|end"
+                android:padding="4dp">
+
+            </TableLayout>
+        </ScrollView>
+    </HorizontalScrollView>
+</LinearLayout>

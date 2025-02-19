@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Awatar, używamy systemowej ikony "ic_menu_camera" zamiast ic_person -->
+        <ImageView
+            android:id="@+id/imageViewAvatar"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:src="@android:drawable/ic_menu_camera"
+            android:contentDescription="Avatar"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Dane użytkownika (email) -->
+        <TextView
+            android:id="@+id/textUserEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Twój email"
+            android:textSize="16sp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="8dp"/>
+
+        <!-- Status użytkownika (np. kierownik/pracownik) -->
+        <TextView
+            android:id="@+id/textUserStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Status: pracownik/kierownik"
+            android:textSize="16sp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Przycisk "Zgłoś uwagi" (wysyłanie maila) -->
+        <Button
+            android:id="@+id/buttonZglosUwagi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Zgłoś uwagi"
+            android:layout_gravity="center"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Sekcja "Aktualizacja programu" -->
+        <TextView
+            android:id="@+id/textAktualizacjaHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Aktualizacja programu"
+            android:textSize="18sp"
+            android:layout_marginBottom="8dp"
+            android:textStyle="bold"/>
+
+        <Button
+            android:id="@+id/buttonCheckUpdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sprawdź aktualizację" />
+
+    </LinearLayout>
+</ScrollView>

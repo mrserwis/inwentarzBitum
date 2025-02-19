@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <!-- Numer WZ -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Numer WZ:"
+            android:layout_gravity="start"
+            android:paddingEnd="8dp" />
+
+        <EditText
+            android:id="@+id/editTextNumerWZ"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Numer WZ"
+            android:inputType="number"
+            android:focusable="false"
+            android:focusableInTouchMode="false"/>
+    </LinearLayout>
+
+    <!-- Odbiorca -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Odbiorca:"
+            android:layout_gravity="start"
+            android:paddingEnd="8dp" />
+
+        <Spinner
+            android:id="@+id/SpinnerOdbiorca"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Odbiorca"/>
+        <ImageButton
+            android:id="@+id/btnOdbiorcaFragment"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@android:drawable/ic_menu_search"
+            android:contentDescription="Wybierz odbiorcę" />
+    </LinearLayout>
+
+
+    <!-- Dostawa do -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dostawa do:"
+            android:layout_gravity="start"
+            android:paddingEnd="8dp" />
+
+        <Spinner
+            android:id="@+id/SpinnerDostawa"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Dostawa do"/>
+
+        <ImageButton
+            android:id="@+id/btnDostawcaFragment"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@android:drawable/ic_menu_search"
+            android:contentDescription="Wybierz dostawcę" />
+    </LinearLayout>
+
+
+    <!-- Komentarz -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Komentarz:"
+            android:layout_gravity="start"
+            android:paddingEnd="8dp" />
+
+        <EditText
+            android:id="@+id/editTextKomentarz"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Wpisz komentarz"/>
+    </LinearLayout>
+
+    <CheckBox
+        android:id="@+id/checkBoxZwrot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Zwrot (odejmij stany)"/>
+    <!-- Przycisk "Wybierz Towary" -->
+    <Button
+        android:id="@+id/btn_wybierz_towary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Wybierz Towary"
+        android:layout_marginTop="8dp"/>
+
+    <!-- Przycisk Zapisz -->
+
+    <Button
+        android:id="@+id/buttonAddWZ"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Zapisz"
+        android:layout_marginTop="16dp"/>
+
+    <!-- Przycisk Anuluj -->
+    <Button
+        android:id="@+id/buttonCancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Anuluj"
+        android:layout_marginTop="8dp"/>
+</LinearLayout>
